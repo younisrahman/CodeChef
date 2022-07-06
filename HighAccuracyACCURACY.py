@@ -9,7 +9,7 @@ for i in range(n):
         loop = True
         count = 1
         while loop:
-            if num+count % 3 == 0:
+            if (num+count) % 3 == 0:
                 print(count)
                 loop = False
             count += 1
