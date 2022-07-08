@@ -5,10 +5,10 @@ for i in range(int(input())):
     # elif a > b and a < c:
     #     print(c)
     elif b > a and b > c:
-        print(b)
+        print("Bob")
     # elif b > a and b < c:
     #     print(c)
     elif c > a and c > b:
-        print(c)
+        print("Charlie")
     # elif c > a and c < b:
     #     print(b)
