@@ -1,18 +1,46 @@
+turn = 'CHEF'
 for i in range(int(input())):
     # for j in range(int(input())):
     n = int(input())
     x = list(map(int, input().split()))
-    chef = 0
-    chefina = 0
-    for k in range(n):
-        if k == 0:
-            chef = x[k]
-        elif k == 1:
-            chefina = x[k]
+    s = sum(x)
+    # if s == 0:
+    #     if turn == 'CHEF':
+    #         turn = 'CHEFINA'
+    #         print('CHEF')
+    #     else:
+    #         turn = 'CHEF'
+    #         print('CHEFINA')
+    # elif s == 1:
+    #     if turn == 'CHEF':
+    #         turn = 'CHEFINA'
+    #         print('CHEF')
+    #     else:
+    #         turn = 'CHEF'
+    #         print('CHEFINA')
+    # else:
+    if s % 2 == 0:
+        if turn == 'CHEF':
+            turn = 'CHEFINA'
+            print('CHEF')
         else:
-            if k % 2 == 0:
-                chef += x[k]
-            else:
-                chefina += x[k]
+            turn = 'CHEF'
+            print('CHEFINA')
+    else:
+        if turn == 'CHEF':
+            turn = 'CHEFINA'
+            print('CHEF')
+        else:
+            turn = 'CHEF'
+            print('CHEFINA')
+    # if s % 2 == 0:
+    #     if turn == 0:
+    #         print("CHEF")
+    #     else:
+    #         print("CHEFINA")
 
-    print("CHEF" if chef < chefina else "CHEFINA")
+    # else:
+    #     if turn == 0:
+    #         print("CHEF")
+    #     else:
+    #         print("CHEFINA")
