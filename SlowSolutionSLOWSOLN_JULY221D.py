@@ -1,6 +1,14 @@
 for i in range(int(input())):
     a, b, c = map(int, input().split())
-    if (a+b+c) >= 100 and a >= 10 and b >= 10 and c >= 10:
-        print("PASS")
-    else:
-        print("FAIL")
+    new = []
+    for i in range(a):
+        if c < b:
+            new.append(c)
+        else:
+            new.append(b)
+        c = c - b
+        if c <= 0:
+            break
+    # for i in
+
+    print(new)
