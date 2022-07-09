@@ -40,35 +40,24 @@ for _ in range(int(input())):
     n = int(input())
     arr = list(map(int, input().split()))[:n]
     s = 0
-    c = 0
+    # c = 0
     cp = 0
-    turn = 'CHEF'
     for i in range(n):
-        if arr[i] > 1:
-            if (arr[i]-1) % 2 == 0:
-                if turn == 'CHEF':
-                    turn = 'CHEFINA'
-                else:
-                    turn = 'CHEF'
-            else:
-                if turn == 'CHEF':
-                    turn = 'CHEF'
-                else:
-                    turn = 'CHEFINA'
-            c += 1
-        else:
-            if turn == 'CHEF':
-                turn = 'CHEFINA'
-            else:
-                turn = 'CHEF'
+        if arr[i] == 1:
             cp += 1
-    if cp > 0:
+            if cp == 2:
+                break
+        else:
+            s += arr[i]
+    if cp > 1:
         if cp % 2 == 0:
             print("CHEFINA")
         else:
             print("CHEF")
     else:
-        if turn == 'CHEF':
+        if n % 2 == 0:
+            s += cp
+        if s % 2 == 0:
             print('CHEFINA')
         else:
             print('CHEF')
