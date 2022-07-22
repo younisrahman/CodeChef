@@ -9,30 +9,18 @@
 #         else:
 #             print(((n//a)+1)*a)
 
-# # ToDivideorNotToDivideDIVAB_JULY222D
-# for i in (range(int(input()))):
-#     a, b, n = map(int, input().split())
-#     if a % b == 0:
-#         print('-1')
-#     else:
-#         x = n
-#         if not(x % a == 0):
-#             x = (n+a)-(x % a)
-#         else:
-#             while not ((x % a == 0) and not(x % b == 0)):
-#                 x += a
-#         print(x)
+
+def ans(a, b, n):
+    if a % b == 0:
+        return -1
+    x = n
+    if x % a != 0:
+        x = n+a-(x % a)
+    while not (x % a == 0 and x % b != 0):
+        x += a
+    return x
 
 
-# for i in (range(int(input()))):
-#     a, b, n = map(int, input().split())
-#     if a % b == 0:
-#         print('-1')
-#     else:
-#         x = n
-#         if not(x % a == 0):
-#             x = (n+a)-(x % a)
-#         else:
-#             while not ((x % a == 0) and not(x % b == 0)):
-#                 x += a
-#         print(x)
+for i in (range(int(input()))):
+    a, b, n = map(int, input().split())
+    print(ans(a, b, n))
