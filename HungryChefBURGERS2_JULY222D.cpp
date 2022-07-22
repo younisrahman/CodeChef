@@ -10,28 +10,25 @@ int main()
     {
         int normal, premium, need, money;
         cin >> normal >> premium >> need >> money;
-        if (money / normal < need)
+        if (money / premium >= need)
+        {
+            cout << "0 " << need << endl;
+        }
+        else if (money / normal < need)
         {
             cout << "-1\n";
         }
         else
         {
-            int nor = need;
-            int prem = 0;
-            int mney = money - (need * normal);
-            while (mney >= 0)
+            int k = (money - (premium * need)) / (normal - premium);
+            if ((money - (premium * need)) % (normal - premium) == 0)
             {
-                mney -= (premium - normal);
-                if (mney < 0)
-                {
-                    break;
-                }
-                prem += 1;
-                nor -= 1;
-                if (nor == 0)
-                    break;
+                cout << k << " " << (need - k) << endl;
             }
-            cout << nor << ' ' << prem << "\n";
+            else
+            {
+                cout << k + 1 << " " << (need - (k + 1)) << endl;
+            }
         }
     }
 
