@@ -12,13 +12,13 @@ for i in range(int(input())):
         one += 1
 
     if arr[0] == arr[4]:
-        one += 1
+        two += 1
     elif arr[0] == arr[5]:
-        one += 1
+        two += 1
     if arr[1] == arr[4]:
-        one += 1
+        two += 1
     elif arr[1] == arr[5]:
-        one += 1
+        two += 1
 
     if one == 2:
         print(1)
