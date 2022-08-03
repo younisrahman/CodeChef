@@ -20,8 +20,8 @@ int main()
     while (t--)
     {
         cin >> n >> x >> y >> a >> b;
-        int patrolAmount = (n / a) * x;
-        int diselAmount = (n / b) * y;
+        int patrolAmount = (x / a) * n;
+        int diselAmount = (y / b) * n;
         if (patrolAmount < diselAmount)
         {
             ans = "PETROL";
