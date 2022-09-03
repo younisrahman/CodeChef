@@ -1,44 +1,51 @@
-#include <bits/stdc++.h>
-//#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
-{
-int n,a;
-set<int> set;
-cin>>n;
-while(n--)
-{
-    cin>> a;
-    int vec[a];
-    for(int i=0;i<a;i++){
-        int val;
-        cin >> val;
-        vec[i]=val;
-    }
-    for(int i=0;i< a;i++){
+#define ll long long
 
-        int count =1;
-        char c;
-        if(vec[i] <0)
-            c='-';
-        else
-            c='+';
-        // cout <<c << endl;
-        for (int j = i+1; j < a; j++)
+void solution()
+{
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    if (n < 2)
+    {
+        cout << 1 << endl;
+        return;
+    }
+    int ans[n] = {0};
+    ans[n - 1] = 1;
+    for (int j = n - 2; j >= 0; j--)
+    {
+        if ((a[j] > 0 && a[j + 1] > 0) || (a[j] < 0 && a[j + 1] < 0))
         {
-            if (vec[j] < 0 && c =='+')
-                c = '-'; 
-            else if (vec[j] > 0 && c == '-')
-                c = '+';
-            
-            else
-                break;
-                count ++;
-            }
-        cout << count << " ";
-        
+            ans[j] = 1;
+        }
+        else
+        {
+            ans[j] = ans[j + 1] + 1;
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout << ans[i] << " ";
     }
     cout << endl;
 }
+
+int main()
+{
+    // your code goes here
+    ll t, n, k;
+    cin >> t;
+    while (t--)
+    {
+        // solve();
+        solution();
+        cout << endl;
+    }
     return 0;
 }
