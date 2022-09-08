@@ -22,23 +22,25 @@ int main()
         sort(arrival.begin(), arrival.end());
         sort(departure.begin(), departure.end());
 
-        int j = 0;
+        int j = 0, i = 0;
         int count = 0;
         int ans = 0;
-        for (int i = 0; i < n; i++)
+        while (i < n)
         {
             if (arrival[i] < departure[j])
             {
-                count++;
+                ++i;
+                ++count;
             }
             else if (arrival[i] > departure[j])
             {
-                j++;
-                count--;
+                ++j;
+                --count;
             }
             else
             {
-                j++;
+                ++i;
+                ++j;
             }
             ans = max(ans, count);
         }
