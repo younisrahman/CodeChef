@@ -1,39 +1,39 @@
 #include <bits/stdc++.h>
-//#include<iostream>
 using namespace std;
-int main()
+#define int long long
+int32_t main()
 {
-    int n, a, b, c, d;
-    set<int> set;
-    cin >> n;
-    while (n--)
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL), cout.tie(NULL);
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cin >> a;
-        vector<int> vec;
+        int n;
+        cin >> n;
+        int a[n];
 
-        for (int i = 0; i < a; i++)
+        for (int i = 0; i < n; i++)
         {
-            cin >> b;
-            vec.push_back(b);
+            cin >> a[i];
         }
-        sort(vec.begin(), vec.end());
-        int amount = 0;
-        if (a % 2 == 0)
+        sort(a, a + n);
+        if (n % 2 == 0)
         {
-            for (int i = 1; i < a; i += 2)
-            {
-                amount += vec[i];
-            }
+            int sum = 0;
+            for (int i = 1; i < n; i += 2)
+                sum += a[i];
+
+            cout << sum << endl;
         }
         else
         {
-            for (int i = 0; i < a; i += 2)
-            {
-                amount += vec[i];
-            }
-        }
+            int sum = 0;
+            for (int i = 0; i < n; i += 2)
+                sum += a[i];
 
-        std::cout << amount << std::endl;
+            cout << sum << endl;
+        }
     }
     return 0;
 }
