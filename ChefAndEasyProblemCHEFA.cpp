@@ -18,10 +18,21 @@ int main()
         }
         sort(vec.begin(), vec.end());
         int amount = 0;
-        for (int i = a - 1; i >= 0; i -= 2)
+        if (a % 2 == 0)
         {
-            amount += vec[i];
+            for (int i = 1; i < a; i += 2)
+            {
+                amount += vec[i];
+            }
         }
+        else
+        {
+            for (int i = 0; i < a; i += 2)
+            {
+                amount += vec[i];
+            }
+        }
+
         std::cout << amount << std::endl;
     }
     return 0;
