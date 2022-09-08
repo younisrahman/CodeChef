@@ -21,12 +21,26 @@ int main()
         }
         sort(arrival.begin(), arrival.end());
         sort(departure.begin(), departure.end());
-        int i = 0;
+
         int j = 0;
         int count = 0;
         int ans = 0;
-        while (i < n)
+        for (int i = 0; i < n; i++)
         {
+            if (arrival[i] < departure[j])
+            {
+                count++;
+            }
+            else if (arrival[i] > departure[j])
+            {
+                j++;
+                count--;
+            }
+            else
+            {
+                j++;
+            }
+            ans = max(ans, count);
         }
         cout << ans << endl;
     }
