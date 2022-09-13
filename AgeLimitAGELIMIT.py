@@ -1,3 +1,4 @@
+# //Age limit check 
 n = int(input())
 for i in range(n):
     x, y, a = map(int, input().split())
